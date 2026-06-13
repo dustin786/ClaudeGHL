@@ -109,13 +109,34 @@ export const HOOK_FORMULAS: HookFormula[] = [
     bestFor: ['tiktok', 'instagram', 'facebook'],
     emotion: 'insider_knowledge',
   },
-  // DustinAI Signature Hooks
+  // Dumb Tax Signature Hooks
   {
     id: 'dustin_real_talk',
     template: 'Real talk: {honest_insight}',
     example: "Real talk: your sales script isn't the problem — your mindset is",
     bestFor: ['tiktok', 'instagram', 'facebook'],
     emotion: 'authenticity',
+  },
+  {
+    id: 'dumb_tax_lesson',
+    template: 'I paid the dumb tax on {topic} so you don\'t have to:',
+    example: "I paid the dumb tax on hiring so you don't have to:",
+    bestFor: ['tiktok', 'instagram', 'facebook', 'youtube'],
+    emotion: 'authenticity',
+  },
+  {
+    id: 'dumb_tax_stop',
+    template: 'Stop paying the dumb tax on {topic}. Here\'s the shortcut:',
+    example: "Stop paying the dumb tax on sales training. Here's the shortcut:",
+    bestFor: ['tiktok', 'linkedin', 'instagram'],
+    emotion: 'pain_point',
+  },
+  {
+    id: 'make_it_best_day',
+    template: 'Make it the best day of your life — start with {actionable_tip}',
+    example: 'Make it the best day of your life — start with this one sales habit',
+    bestFor: ['instagram', 'facebook', 'tiktok'],
+    emotion: 'motivation',
   },
   {
     id: 'atlas_finance',
@@ -177,25 +198,33 @@ export const CTA_TEMPLATES: CTATemplate[] = [
 ];
 
 export const DUSTINAI_BRAND_CONTEXT = `
-DustinAI is a sales and leadership coaching brand founded by Dustin,
-affiliated with Atlas Finance. The target audience includes:
-- Sales professionals, SDRs, AEs, and sales leaders
-- Entrepreneurs and business owners scaling their teams
-- Professionals pursuing financial freedom and income growth
-- People exploring Atlas Finance's programs and opportunities
+Dustin Rhodes (DR) is a sales and leadership coach operating under two brands:
+- DUMB TAX (@dumbtax) — the flagship brand. Tagline: "Make it the best day of your life."
+  Content theme: hard lessons learned ("paying the dumb tax"), growth mindset, no-excuses execution.
+- DustinAI — AI-powered sales automation tools and coaching programs.
+Both brands are connected to Atlas Finance, a financial freedom platform.
+
+The target audience:
+- Sales professionals (SDRs, AEs, closers) looking to level up income
+- Team leaders and managers scaling their sales org
+- Entrepreneurs building businesses and chasing financial independence
+- People exploring Atlas Finance's products and wealth-building programs
 
 Core content pillars:
-1. Sales tactics, frameworks, and objection handling scripts
-2. Leadership and team-building strategies
-3. AI tools for sales automation (DustinAI platform)
-4. Atlas Finance — wealth building, financial strategy, and opportunities
+1. Sales tactics, scripts, and objection handling (30%)
+2. Leadership, team culture, and scaling frameworks (25%)
+3. AI tools for business — DustinAI, GoHighLevel, automations (25%)
+4. Atlas Finance / wealth building / financial freedom mindset (20%)
 
-Brand voice: Authentic, high-energy, results-obsessed, no-fluff, relatable.
-Tone: Confident but approachable. Speaks like a coach who's been in the trenches.
-Signature phrases: "Let's get it", "This is how you win", "Real talk", "No BS".
+Brand voice: Authentic, high-energy, zero fluff, coach-in-the-trenches energy.
+Tone: Confident, relatable, straight-talking. Dustin speaks from real experience.
+Signature phrases: "Make it the best day of your life", "Real talk", "Let's get it",
+"No more dumb tax", "This is how you win", "Stop paying the dumb tax on [topic]".
 
-Do NOT make specific financial guarantees or income claims that could be misleading.
-DO use real frameworks, actionable tactics, and proven strategies.
+When relevant, reference "Dumb Tax" as the idea of paying the price for not knowing better —
+and frame the content as the shortcut that saves the audience from that mistake.
+
+Do NOT make specific income guarantees. DO share real frameworks and proven strategies.
 `;
 
 export const SEO_KEYWORDS_BY_NICHE: Record<string, string[]> = {

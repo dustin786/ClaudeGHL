@@ -63,8 +63,10 @@ export function processVideo(
           '[0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1[scaled_main]',
           // Scale signature clip the same way
           '[2:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1[scaled_sig]',
-          // Overlay watermark on main video (top-right, 10% width, 90% opacity)
-          '[scaled_main][1:v]overlay=W-w-20:20:alpha=0.9[watermarked]',
+          // Scale watermark to 12% of video width (≈130px on 1080px wide), preserve aspect
+          '[1:v]scale=iw*0.12:-1[wm]',
+          // Overlay watermark top-right corner (20px margins), 90% opacity
+          '[scaled_main][wm]overlay=W-w-20:20:alpha=0.9[watermarked]',
           // Concat watermarked main + signature ending
           '[watermarked][0:a][scaled_sig][2:a]concat=n=2:v=1:a=1[outv][outa]',
         ])
@@ -84,7 +86,8 @@ export function processVideo(
         .input(config.brand.watermarkPath)
         .complexFilter([
           '[0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1[scaled]',
-          '[scaled][1:v]overlay=W-w-20:20:alpha=0.9[outv]',
+          '[1:v]scale=iw*0.12:-1[wm]',
+          '[scaled][wm]overlay=W-w-20:20:alpha=0.9[outv]',
         ])
         .outputOptions([
           '-map [outv]',
